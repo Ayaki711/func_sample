@@ -1,0 +1,29 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<form action='' method='POST'>
+    <table class="table">
+        <tr>
+            <th>タイトル</th>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <th>本文</th>
+            <td>{{ form.text }}</td>
+        </tr>
+        <tr>
+            <th>日付</th>
+            <td>{{ form.date }}</td>
+        </tr>
+        <tr>
+            <th>今日の充実度</th>
+            <td>
+                <label for="customRange1">今日の充実度</label>
+                <input type="range" class="custom-range" id="customRange1" min="0" max="10">
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">送信</button>
+    {% csrf_token %}
+</form>
+{% endblock %}
